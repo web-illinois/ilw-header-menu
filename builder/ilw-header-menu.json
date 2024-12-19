@@ -1,9 +1,9 @@
 {
-    "title": "<%= _.startCase(name.slice(4)) %>",
-    "tag": "<%= name %>",
-    "github": "https://github.com/web-illinois/<%= name %>/",
+    "title": "Header Menu",
+    "tag": "ilw-header-menu",
+    "github": "https://github.com/web-illinois/ilw-header-menu/",
     "type": "web component",
-    "element-name": "<%= name %>",
+    "element-name": "ilw-header-menu",
     "description": "Description for builder.",
     "purpose": "Imperative mood purpose for builder homepage.",
     "toolkit-version": "",

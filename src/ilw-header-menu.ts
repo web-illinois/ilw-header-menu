@@ -1,11 +1,11 @@
 import { LitElement, html, unsafeCSS } from "lit";
 // @ts-ignore
-import styles from './<%= name %>.styles.css?inline';
-import './<%= name %>.css';
+import styles from './ilw-header-menu.styles.css?inline';
+import './ilw-header-menu.css';
 import { customElement, property } from "lit/decorators.js";
 
-@customElement("<%= name %>")
-export default class <%= _.upperFirst(_.camelCase(name.slice(4))) %> extends LitElement {
+@customElement("ilw-header-menu")
+export default class HeaderMenu extends LitElement {
 
     @property()
     theme = "";
@@ -29,6 +29,6 @@ export default class <%= _.upperFirst(_.camelCase(name.slice(4))) %> extends Lit
 
 declare global {
     interface HTMLElementTagNameMap {
-        "<%= name %>": <%= _.upperFirst(_.camelCase(name.slice(4))) %>;
+        "ilw-header-menu": HeaderMenu;
     }
 }
