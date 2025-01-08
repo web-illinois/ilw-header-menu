@@ -8,10 +8,94 @@
     <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
     <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/3.0.0-alpha/ilw-global.css">
     <script type="module" src="/src/ilw-header-menu.ts"></script>
+    <script type="module" src="/src/ilw-header-menu-section.ts"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+          const params = new URLSearchParams(window.location.search);
+          document.querySelectorAll("ilw-header-menu").forEach(component => {
+            if (params.has('compact')) {
+              component.setAttribute('compact', 'true');
+            }
+          });
+        });
+    </script>
+
 </head>
 
 <body style="margin: 0; padding: 0;">
-<ilw-header-menu></ilw-header-menu>
+<ilw-header-menu>
+    <ul>
+        <li><ilw-header-menu-section id="current1">
+            <span slot="label">Start Here</span>
+            <ul>
+            <li><a href="/getting_started/index.html">Getting Started</a></li>
+            <li><a href="/create_page/index.html">Create a Page</a></li>
+            <li><a href="/upgrade/index.html">Upgrade from V2</a></li>
+            </ul>
+        </ilw-header-menu-section></li>
+        <li><ilw-header-menu-section id="current2" linked="true">
+            <a slot="link" href="/philosophy/index.html">Information</a>
+            <ul>
+              <li><a href="/philosophy/index.html">Philosophy</a></li>
+              <li><a href="/links/index.html">Helpful Links</a></li>
+              <li><a href="/github/index.html">Organization and Github</a></li>
+              <li> <ilw-header-menu-section>
+                <span slot="label">Smithsonite</span>
+                <ul>
+                  <li><a href="#">Amphibole</a></li>
+                  <li><a href="#">Pyroxene</a></li>
+                  <li><a href="#">Feldspar</a></li>
+                </ul>
+              </ilw-header-menu-section></li>
+              <li><ilw-header-menu-section linked="true">
+                <a slot="link" href="#">Garnet</a>
+                <ul>
+                  <li><a href="#">Gneiss</a></li>
+                  <li><a href="#">Peridotite</a></li>
+                  <li><a href="#">Syenite</a></li>
+                  <li><a href="#">Porphyry</a></li>
+                </ul>
+              </ilw-header-menu-section></li>
+            </ul>
+        </ilw-header-menu-section></li>
+        <li><a href="/demo/index.html" id="current3">Demo Pages</a></li>
+        <li><a href="/components_toc/index.html">Components</a></li>
+        <li><a href="/preview/index.html">Component Preview</a></li>
+        <li><ilw-header-menu-section right>
+            <span slot="label">Six</span>
+            <ul>
+              <li><a href="/philosophy/index.html">Philosophy</a></li>
+              <li><a href="/links/index.html">Helpful Links</a></li>
+              <li><a href="/github/index.html">Organization and Github</a></li>
+            </ul>
+        </ilw-header-menu-section></li>
+        <li><ilw-header-menu-section linked right>
+            <a slot="link" href="/philosophy/index.html">Seven</a>
+            <ul>
+              <li><a href="/philosophy/index.html">Philosophy</a></li>
+              <li><a href="/links/index.html">Helpful Links</a></li>
+              <li><a href="/github/index.html">Organization and Github</a></li>
+              <li> <ilw-header-menu-section right>
+                <span slot="label">Smithsonite</span>
+                <ul>
+                  <li><a href="#">Amphibole</a></li>
+                  <li><a href="#">Pyroxene</a></li>
+                  <li><a href="#">Feldspar</a></li>
+                </ul>
+              </ilw-header-menu-section></li>
+              <li><ilw-header-menu-section linked="true" right>
+                <a slot="link" href="#">Garnet</a>
+                <ul>
+                  <li><a href="#">Gneiss</a></li>
+                  <li><a href="#">Peridotite</a></li>
+                  <li><a href="#">Syenite</a></li>
+                  <li><a href="#">Porphyry</a></li>
+                </ul>
+              </ilw-header-menu-section></li>
+            </ul>
+        </ilw-header-menu-section></li>
+    </ul>
+</ilw-header-menu>
 </body>
 
 </html>

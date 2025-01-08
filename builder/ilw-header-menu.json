@@ -4,8 +4,8 @@
     "github": "https://github.com/web-illinois/ilw-header-menu/",
     "type": "web component",
     "element-name": "ilw-header-menu",
-    "description": "Description for builder.",
-    "purpose": "Imperative mood purpose for builder homepage.",
+    "description": "Menu for the top of the page.",
+    "purpose": "Build a navigation menu",
     "toolkit-version": "",
     "production-version": "",
     "development-version": "1.0.0-alpha"

@@ -1,9 +1,30 @@
 /* Styleable variables are in the base layer so they can be overridden easily */
 @layer base {
     :host {
-
+      --ilw-header-menu--link-color: var(--il-blue);
+      --ilw-header-menu--link-color--hover: var(--il-altgeld);
+      --ilw-header-menu--link-background: transparent;
+      --ilw-header-menu--link-background--hover: white;
+      --ilw-header-menu--link-background--focus: var(--il-industrial-lighter-4);
+      --ilw-header-menu--link-border-bottom-highlight: 4px solid transparent;
+      --ilw-header-menu--link-border-bottom-highlight--focus: 4px solid var(--il-orange);
+      --ilw-header-menu--link-border-left-highlight: none;
+      --ilw-header-menu--link-border-left-highlight--focus: none;
+      --ilw-header-menu--background: #E8E9EB;
+      --ilw-header-menu--flex-direction: row;
+      --ilw-header-menu--items--position: absolute;
+      --ilw-header-menu--items--border: 1px solid rgb(0, 0, 0, .01);
+      --ilw-header-menu--items--box-shadow: 0 0 4px #00000040;
+      --ilw-header-menu--items--width: 250px;
+      --ilw-header-menu--items--top: initial;
+      --ilw-header-menu--items--left: 0;
+      --ilw-header-menu--font: 700 16px/22px var(--il-font-sans);
+      --ilw-header-menu--grid-template-columns: auto auto;
+      --ilw-header-menu-section--grid-template-columns--header: auto 24px;
+      --ilw-header-menu-section--anchor--padding: 6px 20px;
+      --ilw-header-menu-section--anchor--border: none;
+      --ilw-header-menu-section--transform: none;
+      --ilw-header-menu-section--transform--selected: rotate(180deg);
     }
 }
 
-:host {
-}
