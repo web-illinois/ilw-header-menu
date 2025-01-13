@@ -6,6 +6,7 @@
       --ilw-header-menu--link-background: transparent;
       --ilw-header-menu--link-background--hover: white;
       --ilw-header-menu--link-background--focus: var(--il-industrial-lighter-4);
+      --ilw-header-menu--link-background--sub--focus: var(--il-storm-lighter-4);
       --ilw-header-menu--link-border-bottom-highlight: 4px solid transparent;
       --ilw-header-menu--link-border-bottom-highlight--focus: 4px solid var(--il-orange);
       --ilw-header-menu--link-border-left-highlight: none;
@@ -23,8 +24,14 @@
       --ilw-header-menu-section--grid-template-columns--header: auto 24px;
       --ilw-header-menu-section--anchor--padding: 6px 20px;
       --ilw-header-menu-section--anchor--border: none;
+      --ilw-header-menu-section--anchor--text-indent: 0;
       --ilw-header-menu-section--transform: none;
       --ilw-header-menu-section--transform--selected: rotate(180deg);
     }
+}
+
+div.parent {
+  margin: 0 var(--ilw-margin--side, 0);
+  padding-top: 6px;
 }
 

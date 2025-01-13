@@ -3,6 +3,7 @@ ilw-header-menu-section[linked] a[slot="link"] {
    box-sizing: border-box;
    height: 100%;
    display: block;
+   text-indent: var(--ilw-header-menu-section--anchor--text-indent);
    position: relative;
    font: var(--ilw-header-menu--font);
    background: var(--ilw-header-menu--link-background);
@@ -53,6 +54,11 @@ ilw-header-menu-section {
         li {
             list-style: none;
 
+            span {
+                display: inline-block;
+                text-indent: var(--ilw-header-menu-section--anchor--text-indent);
+            }
+
             a {
                 --ilw-header-menu--link-border-left-highlight: 4px solid transparent;
                 --ilw-header-menu--link-border-left-highlight--focus: 4px solid var(--il-orange);
@@ -61,6 +67,7 @@ ilw-header-menu-section {
             
                 all: initial;
                 box-sizing: border-box;
+                text-indent: var(--ilw-header-menu-section--anchor--text-indent);
                 display: block;
                 position: relative;
                 padding: var(--ilw-header-menu-section--anchor--padding);
@@ -83,7 +90,7 @@ ilw-header-menu-section {
                 }
               
                 &:focus {
-                  background: var(--ilw-header-menu--link-background--focus);
+                  background: var(--ilw-header-menu--link-background--sub--focus);
                   border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus);
                   border-left: var(--ilw-header-menu--link-border-left-highlight--focus);
                 }
@@ -109,11 +116,12 @@ ilw-header-menu-section {
 ilw-header-menu[compact] ilw-header-menu-section {
     display: block;
     border-bottom: 1px solid var(--il-storm-lighter-3);
-}
 
-ilw-header-menu[compact] ilw-header-menu-section ul li {
-    border-top: 1px solid var(--il-storm-lighter-3);
-    padding-left: 40px;
+    ul li {
+        --ilw-header-menu-section--anchor--text-indent: 20px;
+        border-top: 1px solid var(--il-storm-lighter-3);
+        background: var(--il-storm-lighter-4);
+    }
 }
 
 ilw-header-menu[compact] ilw-header-menu-section ilw-header-menu-section {
@@ -121,5 +129,8 @@ ilw-header-menu[compact] ilw-header-menu-section ilw-header-menu-section {
     --ilw-header-menu-section--transform: none;
     --ilw-header-menu-section--transform--selected: rotate(180deg);
     --ilw-header-menu--grid-template-columns: auto 51px;
-}
 
+    ul a, ul button {
+        --ilw-header-menu-section--anchor--text-indent: 40px;
+    }
+}

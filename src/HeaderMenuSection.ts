@@ -1,7 +1,7 @@
 import { LitElement, html, unsafeCSS } from "lit";
 // @ts-ignore
-import styles from './ilw-header-menu-section.styles.css?inline';
-import './ilw-header-menu-section.css';
+import styles from './HeaderMenuSection.styles.css?inline';
+import './HeaderMenuSection.css';
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("ilw-header-menu-section")
@@ -43,11 +43,6 @@ export default class HeaderMenuSection extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-        window.addEventListener('keydown', this.handleWindowKeydown.bind(this));
-    }
-
-    handleWindowKeydown(evt: KeyboardEvent) {
-        if (evt.key === 'Escape') console.log('Escape key pressed');
     }
 
     handleToggleClick(evt: Event) {
@@ -81,7 +76,6 @@ export default class HeaderMenuSection extends LitElement {
 
     render() {
         this.current = this.current || (this.getAttribute('aria-current') != null && (this.getAttribute('aria-current') === 'page' || this.getAttribute('aria-current') === 'true'));
-        console.log(this.current);
         var withLink = html`
             <div class="header-link ${this.mouseover ? "highlighted" : ""} ${this.current ? "current" : ""}" @mouseover="${this.toggleMouseOver.bind(this)}"  @mouseout="${this.toggleMouseOver.bind(this)}">
                 <slot name="link"></slot>

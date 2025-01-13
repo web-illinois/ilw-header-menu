@@ -1,5 +1,5 @@
 ilw-header-menu[compact] {
-  --ilw-header-menu--background: white;
+  --ilw-header-menu--background: #e8e9eb;
   --ilw-header-menu--flex-direction: column;
   --ilw-header-menu--items--position: relative;
   --ilw-header-menu--items--border: none;
@@ -7,8 +7,6 @@ ilw-header-menu[compact] {
   --ilw-header-menu--items--width: 100%;
   --ilw-header-menu--font: 600 18px / 28px var(--il-font-sans);
   --ilw-header-menu--grid-template-columns: auto 52px;
-  --ilw-header-menu-section--anchor--padding: 6px 20px 6px 20px;
-
   --ilw-header-menu--link-border-left-highlight: 4px solid transparent;
   --ilw-header-menu--link-border-left-highlight--focus: 4px solid var(--il-orange);
   --ilw-header-menu--link-border-bottom-highlight: none;
@@ -22,6 +20,7 @@ ilw-header-menu {
   all: initial;
   display: block;
   background: var(--ilw-header-menu--background);
+
 
   & > ul {
     all: initial;
