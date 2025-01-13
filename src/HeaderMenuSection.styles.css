@@ -44,7 +44,6 @@ button, .link {
     cursor: pointer;
     height: 100%;
     width: 100%;
-    border-bottom: var(--ilw-header-menu--link-border-bottom-highlight);
     border-left: var(--ilw-header-menu--link-border-left-highlight);
     
     svg {
@@ -119,8 +118,9 @@ button[aria-expanded="true"] {
     &.highlighted {
         background: var(--ilw-header-menu--link-background--hover);
 
-        button, .link {
-          border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus);
+        button, .link, ::slotted(a[slot="link"]) {
+          border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus) !important;
+          border-left: var(--ilw-header-menu--link-border-left-highlight--focus) !important;
         }
     }
 
