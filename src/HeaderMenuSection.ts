@@ -39,6 +39,7 @@ export default class HeaderMenuSection extends LitElement {
 
     constructor() {
         super();
+        this.addEventListener('keydown', this.handleWindowKeydown.bind(this));
     }
 
     connectedCallback() {
@@ -49,6 +50,131 @@ export default class HeaderMenuSection extends LitElement {
         this.expanded = !this.expanded;
         this.dispatchEvent(new CustomEvent('ilw-header-menu-section-expanded', {detail: !this.expanded, bubbles: true, composed: true}));
       }
+
+    handleWindowKeydown(evt: KeyboardEvent) {
+        if (evt.key === 'ArrowDown') {
+            evt.stopPropagation();
+            this.moveToNextItem();
+            this.closeAllExceptOneSections(evt.target);
+        }
+        else if (evt.key === 'ArrowRight' || evt.key === 'ArrowLeft') {
+            if (this.isOnAnchorInLinked() && evt.key === 'ArrowRight') {
+                evt.stopPropagation();
+                this.expanded = false;
+                this.setFocus(true);
+            } else if (this.isOnButtonInLinked() && evt.key === 'ArrowLeft') {
+                evt.stopPropagation();
+                this.expanded = false;
+                this.setFocus();
+            } else if (this.isOnButtonInLinked() && evt.key === 'ArrowRight') {
+                this.expanded = false;
+            } else if (this.isOnAnchorInLinked() && evt.key === 'ArrowLeft') {
+                this.expanded = false;
+            } else {
+                this.expanded = false;
+                this.setFocus();
+            }
+        }
+        else if (evt.key === 'ArrowUp') {
+            evt.stopPropagation();
+            this.moveToPreviousItem();
+            this.closeAllExceptOneSections(evt.target);
+        }
+        else if (evt.key === 'Escape') {
+            if (this.expanded) {
+                evt.stopPropagation();
+                this.setFocus();
+                this.expanded = false;
+            }
+        }
+    }
+
+    isEmbedded() {
+        return this.parentElement && this.parentElement.closest('ilw-header-menu-section') != null;
+    }
+
+    isOnAnchorInLinked() {
+        return this.linked && document.activeElement && document.activeElement.tagName === 'A';
+    }
+
+    isOnButtonInLinked() {
+        return this.linked && document.activeElement && document.activeElement.tagName === 'ILW-HEADER-MENU-SECTION';
+    }
+
+    setFocus(useButton: Boolean = false) {
+        let newNode: Element | null = null;
+        if (this.linked && !useButton) {
+            newNode = this.querySelector('a');
+        }
+        else if (this.shadowRoot) {
+            newNode = this.shadowRoot.querySelector('a');
+            if (newNode == null) {
+                newNode = this.shadowRoot.querySelector('button');
+            }
+        }
+        if (newNode != null) {
+            (newNode as HTMLElement).focus();
+        }
+    }
+
+    moveToNextItem() {
+        let newNode: Element | null = null;
+        if (!this.expanded && !this.isEmbedded()) {
+            this.expanded = true;
+        }
+        let activeElement = document.activeElement;
+        if (activeElement != null) {
+            if (activeElement.tagName === 'ILW-HEADER-MENU-SECTION' && (!this.isEmbedded() || this.expanded)) {
+                newNode = activeElement.querySelector('li');
+                if (newNode != null) {
+                    newNode = newNode.children[0];
+                }
+            } else {
+                newNode = activeElement.closest('li');
+                if (newNode != null) {
+                    newNode = newNode.nextElementSibling;
+                }
+                if (newNode != null) {
+                    newNode = newNode.children[0];
+                }
+            }
+            if (newNode != null) {
+                if (newNode.tagName === 'ILW-HEADER-MENU-SECTION') {
+                    (newNode as HeaderMenuSection).setFocus();
+                } else {
+                    (newNode as HTMLElement).focus();
+                }
+            }
+        }
+    }
+
+    moveToPreviousItem() {
+        let newNode: Element | null = null;
+        let activeElement = document.activeElement;
+        if (activeElement != null) {
+            if (activeElement.tagName === 'ILW-HEADER-MENU-SECTION' && (!this.isEmbedded() || this.expanded)) {
+                newNode = activeElement.querySelector('li');
+                if (newNode != null) {
+                    newNode = newNode.children[0];
+                }
+            } else {
+                newNode = activeElement.closest('li');
+                if (newNode != null) {
+                    newNode = newNode.previousElementSibling;
+                }
+                if (newNode != null) {
+                    newNode = newNode.children[0];
+                }
+            }
+            if (newNode != null) {
+                if (newNode.tagName === 'ILW-HEADER-MENU-SECTION') {
+                    (newNode as HeaderMenuSection).setFocus();
+                } else {
+                    (newNode as HTMLElement).focus();
+                }
+            }
+        }
+    }
 
     renderArrow() {
         return html`<svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.4 23.82" aria-hidden="true">

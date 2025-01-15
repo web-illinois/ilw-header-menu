@@ -45,6 +45,7 @@ button, .link {
     height: 100%;
     width: 100%;
     border-left: var(--ilw-header-menu--link-border-left-highlight);
+    border-bottom: var(--ilw-header-menu--link-border-bottom-highlight);
     
     svg {
       padding: 2px;

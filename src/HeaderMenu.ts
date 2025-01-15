@@ -3,6 +3,7 @@ import { LitElement, html, unsafeCSS } from "lit";
 import styles from './HeaderMenu.styles.css?inline';
 import './HeaderMenu.css';
 import { customElement, property } from "lit/decorators.js";
+import HeaderMenuSection from "./HeaderMenuSection";
 
 @customElement("ilw-header-menu")
 export default class HeaderMenu extends LitElement {
@@ -47,10 +48,54 @@ export default class HeaderMenu extends LitElement {
     
     handleWindowKeydown(evt: KeyboardEvent) {
         if (evt.key === 'Escape') this.closeAllExceptOneSections(null);
+        if (evt.key === 'ArrowRight') {
+            this.closeAllExceptOneSections(null);
+            this.gotoNextSection();
+        }
+        if (evt.key === 'ArrowLeft') {
+            this.closeAllExceptOneSections(null);
+            this.gotoPreviousSection();
+        }
     }
 
     handleNavigationSectionToggleClick(evt: CustomEvent) {
         this.closeAllExceptOneSections(evt.target);
+    }
+
+    gotoPreviousSection() {
+        let newNode: Element | null = null;
+        let activeElement = document.activeElement;
+        if (activeElement != null) {
+            if (activeElement.closest('li') && (activeElement.closest('li') as Element).previousElementSibling    ) {
+                const previousSibling = (activeElement.closest('li') as Element).previousElementSibling;
+                if (previousSibling && previousSibling.children.length > 0) {
+                    newNode = previousSibling.children[0];
+                }
+            }
+            if (newNode && newNode.tagName === 'ILW-HEADER-MENU-SECTION') {
+                (newNode as HeaderMenuSection).setFocus(true);
+            } else {
+                (newNode as HTMLElement).focus();
+            }
+        }
+    }
+
+    gotoNextSection() {
+        let newNode: Element | null = null;
+        let activeElement = document.activeElement;
+        if (activeElement != null) {
+            if (activeElement.closest('li') && (activeElement.closest('li') as Element).nextElementSibling) {
+                const nextSibling = (activeElement.closest('li') as Element).nextElementSibling;
+                if (nextSibling && nextSibling.children.length > 0) {
+                    newNode = nextSibling.children[0];
+                }
+            }
+            if (newNode && newNode.tagName === 'ILW-HEADER-MENU-SECTION') {
+                (newNode as HeaderMenuSection).setFocus();
+            } else {
+                (newNode as HTMLElement).focus();
+            }
+        }
     }
 
     handleWindowResize() {
