@@ -31,7 +31,6 @@
 }
 
 div.parent {
-  margin: 0 var(--ilw-margin--side, 0);
   padding-top: 6px;
 }
 
