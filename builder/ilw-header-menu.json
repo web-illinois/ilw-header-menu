@@ -8,5 +8,6 @@
     "purpose": "Build a navigation menu",
     "toolkit-version": "1.0.0",
     "production-version": "1.0.0",
-    "development-version": "1.0.0"
+    "development-version": "1.0.0",
+    "builder-override-link": "/notes/header/index.html"
 }
