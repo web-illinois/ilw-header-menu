@@ -102,7 +102,8 @@ export default class HeaderMenu extends LitElement {
     }
 
     handleWindowResize() {
-        if (this.offsetWidth < this.width) {
+        let currentWidth = this.offsetWidth == 0 ? window.innerWidth : this.offsetWidth;
+        if (currentWidth < this.width) {
             if (!this.compact) this.compact = true;
         }
         else {
