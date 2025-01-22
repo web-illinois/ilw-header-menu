@@ -54,16 +54,19 @@ export default class HeaderMenuSection extends LitElement {
     handleWindowKeydown(evt: KeyboardEvent) {
         if (evt.key === 'ArrowDown') {
             evt.stopPropagation();
+            evt.preventDefault();
             this.moveToNextItem();
             this.closeAllExceptOneSections(evt.target);
         }
         else if (evt.key === 'ArrowRight' || evt.key === 'ArrowLeft') {
             if (this.isOnAnchorInLinked() && evt.key === 'ArrowRight') {
                 evt.stopPropagation();
+                evt.preventDefault();
                 this.expanded = false;
                 this.setFocus(true);
             } else if (this.isOnButtonInLinked() && evt.key === 'ArrowLeft') {
                 evt.stopPropagation();
+                evt.preventDefault();
                 this.expanded = false;
                 this.setFocus();
             } else if (this.isOnButtonInLinked() && evt.key === 'ArrowRight') {
@@ -77,6 +80,7 @@ export default class HeaderMenuSection extends LitElement {
         }
         else if (evt.key === 'ArrowUp') {
             evt.stopPropagation();
+            evt.preventDefault();
             this.moveToPreviousItem();
             this.closeAllExceptOneSections(evt.target);
         }

@@ -34,6 +34,7 @@ export default class HeaderMenu extends LitElement {
         super.connectedCallback();
         window.addEventListener('click', this.handleWindowClick.bind(this));
         window.addEventListener('resize', this.handleWindowResize);
+        this.handleWindowResize();
     }
 
     disconnectedCallback() {
@@ -49,10 +50,12 @@ export default class HeaderMenu extends LitElement {
     handleWindowKeydown(evt: KeyboardEvent) {
         if (evt.key === 'Escape') this.closeAllExceptOneSections(null);
         if (evt.key === 'ArrowRight') {
+            evt.preventDefault();
             this.closeAllExceptOneSections(null);
             this.gotoNextSection();
         }
         if (evt.key === 'ArrowLeft') {
+            evt.preventDefault();
             this.closeAllExceptOneSections(null);
             this.gotoPreviousSection();
         }
@@ -116,7 +119,6 @@ export default class HeaderMenu extends LitElement {
     }
 
     render() {
-        this.handleWindowResize();
         return html`
             <nav aria-label="Header Menu Navigation" @ilw-header-menu-section-expanded=${this.handleNavigationSectionToggleClick}>
                 <div class="parent"><slot></slot></div>
