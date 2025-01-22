@@ -6,7 +6,7 @@
     "element-name": "ilw-header-menu",
     "description": "Menu for the top of the page.",
     "purpose": "Build a navigation menu",
-    "toolkit-version": "",
-    "production-version": "",
-    "development-version": "1.0.0-alpha"
+    "toolkit-version": "1.0.0",
+    "production-version": "1.0.0",
+    "development-version": "1.0.0"
 }
