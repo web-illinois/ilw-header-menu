@@ -32,5 +32,6 @@
 
 div.parent {
   padding-top: 6px;
+  margin: 0 var(--ilw-margin--side);
 }
 
