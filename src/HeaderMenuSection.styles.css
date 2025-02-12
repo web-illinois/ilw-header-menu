@@ -118,11 +118,6 @@ button[aria-expanded="true"] {
 
     &.highlighted {
         background: var(--ilw-header-menu--link-background--hover);
-
-        button, .link, ::slotted(a[slot="link"]) {
-          border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus) !important;
-          border-left: var(--ilw-header-menu--link-border-left-highlight--focus) !important;
-        }
     }
 
     & .link {
@@ -152,4 +147,20 @@ button[aria-expanded="true"] {
   display: block;
   height: 14px;
   width: 14px;
+}
+
+.submenu.parent button:hover .label ::slotted(span[slot="label"]), .submenu.parent button:focus .label ::slotted(span[slot="label"])  {
+  text-decoration: underline;
+}
+
+.menu.parent .header-link.highlighted button, .menu.parent .header-link.highlighted ::slotted(a[slot="link"]) {
+  border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus) !important;
+}
+
+.submenu.parent button.arrow-only:hover, .submenu.parent button.arrow-only:focus {
+  border-left: 4px solid transparent !important;
+}
+
+.menu.parent .compact button.arrow-only:hover, .menu.parent .compact button.arrow-only:focus {
+  border-left: 4px solid transparent !important;
 }

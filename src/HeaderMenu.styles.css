@@ -30,7 +30,7 @@
     }
 }
 
-div.parent {
+div.parent.full {
   padding-top: 6px;
   margin: 0 var(--ilw-margin--side);
 }

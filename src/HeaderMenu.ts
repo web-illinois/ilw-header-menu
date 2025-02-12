@@ -104,11 +104,21 @@ export default class HeaderMenu extends LitElement {
     handleWindowResize() {
         let currentWidth = this.offsetWidth == 0 ? window.innerWidth : this.offsetWidth;
         if (currentWidth < this.width) {
-            if (!this.compact) this.compact = true;
+            if (!this.compact) this.setCompactTrue();
         }
         else {
-            if (this.compact) this.compact = false;
+            if (this.compact) this.setCompactFalse();
         }
+    }
+
+    setCompactTrue() {
+        this.compact = true;
+        this.querySelectorAll('ilw-header-menu-section').forEach(s => { s.compact = true; });
+    }
+
+    setCompactFalse() {
+        this.compact = false;
+        this.querySelectorAll('ilw-header-menu-section').forEach(s => { s.compact = false; });
     }
 
     getSections() {
@@ -122,7 +132,7 @@ export default class HeaderMenu extends LitElement {
     render() {
         return html`
             <nav aria-label="Header Menu Navigation" @ilw-header-menu-section-expanded=${this.handleNavigationSectionToggleClick}>
-                <div class="parent"><slot></slot></div>
+                <div class="parent ${this.compact ? 'compact' : 'full'}"><slot></slot></div>
             </nav>
         `;
     }

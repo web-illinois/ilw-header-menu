@@ -15,6 +15,11 @@ export default class HeaderMenuSection extends LitElement {
     @property({ 
         type: Boolean
     })
+    compact = false;
+
+    @property({ 
+        type: Boolean
+    })
     right = false;
 
     @property({ 
@@ -205,11 +210,12 @@ export default class HeaderMenuSection extends LitElement {
 
 
     render() {
+        let isSubMenu = this.parentElement != null && this.parentElement.closest("ilw-header-menu-section") != null;
         this.current = this.current || (this.getAttribute('aria-current') != null && (this.getAttribute('aria-current') === 'page' || this.getAttribute('aria-current') === 'true'));
         var withLink = html`
-            <div class="header-link ${this.mouseover ? "highlighted" : ""} ${this.current ? "current" : ""}" @mouseover="${this.toggleMouseOver.bind(this)}"  @mouseout="${this.toggleMouseOver.bind(this)}">
+            <div class="header-link ${this.mouseover ? "highlighted" : ""} ${this.compact ? "compact" : ""} ${this.current ? "current" : ""}" @mouseover="${this.toggleMouseOver.bind(this)}"  @mouseout="${this.toggleMouseOver.bind(this)}">
                 <slot name="link"></slot>
-                <button @click=${this.handleToggleClick.bind(this)} aria-expanded=${this.expanded ? 'true' : 'false'} aria-controls="items">
+                <button class="arrow-only" @click=${this.handleToggleClick.bind(this)} aria-expanded=${this.expanded ? 'true' : 'false'} aria-controls="items">
                     ${this.renderArrow()}
                 </button>
             </div>
@@ -225,7 +231,7 @@ export default class HeaderMenuSection extends LitElement {
         `;
 
         return html`
-            <div class="parent" @ilw-header-menu-section-expanded=${this.handleNavigationSectionToggleClick}>
+            <div class="${isSubMenu ? 'submenu' : 'menu'} parent" @ilw-header-menu-section-expanded=${this.handleNavigationSectionToggleClick}>
                 ${this.linked ? withLink : withoutLink}
                 <div id="items" class="${this.expanded ? 'expanded' : ''} ${this.right ? 'right' : ''}">
                     <slot></slot>
