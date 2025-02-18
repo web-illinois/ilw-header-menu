@@ -6,8 +6,8 @@
     "element-name": "ilw-header-menu",
     "description": "Menu for the top of the page.",
     "purpose": "Build a navigation menu",
-    "toolkit-version": "1.0.3",
-    "production-version": "1.0.3",
-    "development-version": "1.0.3",
+    "toolkit-version": "1.1.0",
+    "production-version": "1.1.0",
+    "development-version": "1.1.0",
     "builder-override-link": "/notes/header/index.html"
 }
