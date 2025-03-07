@@ -6,6 +6,7 @@
     "element-name": "ilw-header-menu",
     "description": "Menu for the top of the page.",
     "version": "1.0.3",
+    "builder-version": "1.0",
     "date": "1/22/2025",
     "css": "https://cdn.toolkit.illinois.edu/ilw-header-menu/1.0.3/ilw-header-menu.css",
     "js": "https://cdn.toolkit.illinois.edu/ilw-header-menu/1.0.3/ilw-header-menu.js",
