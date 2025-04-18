@@ -8,8 +8,10 @@ ilw-header-menu[compact] {
   --ilw-header-menu--font: 600 18px / 28px var(--il-font-sans);
   --ilw-header-menu--grid-template-columns: auto 52px;
   --ilw-header-menu--link-border-left-highlight: 4px solid transparent;
-  --ilw-header-menu--link-border-left-highlight--focus: 4px solid var(--il-orange);
+  --ilw-header-menu--link-border-left-highlight--hover: 4px solid var(--il-orange);
+  --ilw-header-menu--link-border-left-highlight--focus: 4px solid var(--il-blue);
   --ilw-header-menu--link-border-bottom-highlight: none;
+  --ilw-header-menu--link-border-bottom-highlight--hover: none;
   --ilw-header-menu--link-border-bottom-highlight--focus: none;
   --ilw-header-menu--items--position: initial;
   --ilw-header-menu-section--grid-template-columns--header: auto 22px;
@@ -59,8 +61,8 @@ ilw-header-menu {
 
     &:hover {
       background: var(--ilw-header-menu--link-background--hover);
-      border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus);
-      border-left: var(--ilw-header-menu--link-border-left-highlight--focus);
+      border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--hover);
+      border-left: var(--ilw-header-menu--link-border-left-highlight--hover);
       color: var(--ilw-header-menu--link-color--hover);
       text-decoration: underline;
     }

@@ -58,8 +58,8 @@ button, .link {
 
     &:hover {
       background: var(--ilw-header-menu--link-background--hover);
-      border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus);
-      border-left: var(--ilw-header-menu--link-border-left-highlight--focus);
+      border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--hover);
+      border-left: var(--ilw-header-menu--link-border-left-highlight--hover);
       color: var(--ilw-header-menu--link-color--hover);
       fill: var(--ilw-header-menu--link-color--hover);
       text-decoration: underline;
@@ -83,6 +83,7 @@ button[aria-expanded="true"] {
 
   &:focus {
     background: var(--ilw-header-menu--link-background--hover);
+    border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--hover);
   }
 
   svg {
