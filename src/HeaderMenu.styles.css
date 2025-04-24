@@ -6,9 +6,10 @@
       --ilw-header-menu--link-background: transparent;
       --ilw-header-menu--link-background--hover: white;
       --ilw-header-menu--link-background--focus: var(--il-industrial-lighter-4);
-      --ilw-header-menu--link-background--sub--focus: var(--il-storm-lighter-4);
+      --ilw-header-menu--link-background--sub--focus: var(--il-industrial-lighter-4);
       --ilw-header-menu--link-border-bottom-highlight: 4px solid transparent;
-      --ilw-header-menu--link-border-bottom-highlight--focus: 4px solid var(--il-orange);
+      --ilw-header-menu--link-border-bottom-highlight--hover: 4px solid var(--il-orange);
+      --ilw-header-menu--link-border-bottom-highlight--focus: 4px solid var(--il-blue);
       --ilw-header-menu--link-border-left-highlight: none;
       --ilw-header-menu--link-border-left-highlight--focus: none;
       --ilw-header-menu--background: #E8E9EB;
