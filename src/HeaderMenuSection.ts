@@ -215,7 +215,7 @@ export default class HeaderMenuSection extends LitElement {
         var withLink = html`
             <div class="header-link ${this.mouseover ? "highlighted" : ""} ${this.compact ? "compact" : ""} ${this.current ? "current" : ""}" @mouseover="${this.toggleMouseOver.bind(this)}"  @mouseout="${this.toggleMouseOver.bind(this)}">
                 <slot name="link"></slot>
-                <button class="arrow-only" @click=${this.handleToggleClick.bind(this)} aria-expanded=${this.expanded ? 'true' : 'false'} aria-controls="items">
+                <button class="arrow-only" @click=${this.handleToggleClick.bind(this)} aria-expanded=${this.expanded ? 'true' : 'false'} aria-label=${this.querySelector('a[slot="link"]')?.textContent + ' submenu'} aria-controls="items">
                     ${this.renderArrow()}
                 </button>
             </div>
