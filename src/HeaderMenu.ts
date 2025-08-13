@@ -1,4 +1,4 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, html, unsafeCSS, CSSResultGroup } from "lit";
 // @ts-ignore
 import styles from './HeaderMenu.styles.css?inline';
 import './HeaderMenu.css';
@@ -19,7 +19,7 @@ export default class HeaderMenu extends LitElement {
     })
     width = 990;
 
-    static get styles() {
+    static get styles() : CSSResultGroup {
         return unsafeCSS(styles);
     }
 
