@@ -33,6 +33,6 @@
 
 div.parent.full {
   padding-top: 6px;
-  margin: 0 calc(var(--ilw-margin--side) - 18px);
+  margin: 0 calc(var(--ilw-margin--side) - 9px);
 }
 
