@@ -30,7 +30,7 @@ The `<ilw-header-menu-section>` may have a `right` attribute. This will right-al
 ## Code Examples
 
 ```html
-<ilw-header-menu>
+<ilw-header-menu slot="navigation">
     <ul>
         <li><ilw-header-menu-section>
             <span slot="label">Start Here</span>
