@@ -33,7 +33,7 @@ ilw-header-menu-section[linked] a[slot="link"] {
    }
 }
 
-ilw-header-menu-section[linked][aria-current="page"] a[slot="link"] {
+ilw-header-menu-section[linked] a[slot="link"][aria-current="page"], ilw-header-menu-section[linked][current] a[slot="link"] {
     border-color: var(--il-blue);
 
     &:hover {
@@ -84,6 +84,9 @@ ilw-header-menu-section {
                 border-bottom: var(--ilw-header-menu--link-border-bottom-highlight);
 
 
+                &[aria-current] {
+                      border-left: var(--ilw-header-menu--link-border-left-highlight--focus);
+                }
                 &:hover {
                     background: var(--ilw-header-menu--link-background--hover);
                     border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--hover);

@@ -24,7 +24,7 @@
 <body style="margin: 0; padding: 0;">
 <ilw-header-menu>
     <ul>
-        <li><ilw-header-menu-section id="current1">
+        <li><ilw-header-menu-section id="current1" current>
             <span slot="label">Start Here</span>
             <ul>
             <li><a href="/getting_started/index.html">Getting Started</a></li>
@@ -32,10 +32,10 @@
             <li><a href="/upgrade/index.html">Upgrade from V2</a></li>
             </ul>
         </ilw-header-menu-section></li>
-        <li><ilw-header-menu-section id="current2" linked="true">
+        <li><ilw-header-menu-section id="current2" linked="true" current>
             <a slot="link" href="/philosophy/index.html">Information</a>
             <ul>
-              <li><a href="/philosophy/index.html">Philosophy</a></li>
+              <li><a href="/philosophy/index.html" aria-current="page">Philosophy</a></li>
               <li><a href="/links/index.html">Helpful Links</a></li>
               <li><a href="/github/index.html">Organization and Github</a></li>
               <li> <ilw-header-menu-section>
@@ -111,7 +111,7 @@
           </ul>
       </ilw-header-menu-section></li>
       <li><ilw-header-menu-section id="current4" linked="true">
-          <a slot="link" href="/philosophy/index.html">Testing Links</a>
+          <a slot="link" aria-current="page" href="/philosophy/index.html">Testing Links</a>
           <ul>
             <li><ilw-header-menu-section linked="true">
               <a slot="link" href="#">Garnet</a>

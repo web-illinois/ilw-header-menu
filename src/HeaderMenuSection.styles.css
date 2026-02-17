@@ -14,7 +14,7 @@
   left: var(--ilw-header-menu--items--left);
   top: var(--ilw-header-menu--items--top);
   z-index: 100;
-  background: white;
+  background: var(--ilw-header-menu--background-menu-expanded);
 }
 
 #items.expanded.right {

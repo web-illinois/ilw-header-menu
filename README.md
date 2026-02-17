@@ -27,6 +27,10 @@ You can put a `<ilw-header-menu-section>` inside another. This allows you to nes
 
 The `<ilw-header-menu-section>` may have a `right` attribute. This will right-align the menu so it doesn't float off the right-hand side of the page. 
 
+### current attribute
+
+The `<ilw-header-menu-section>` may have a `current` attribute. This will mark the header menu section as being where the user is in the menu navigation structure. 
+
 ## Code Examples
 
 ```html
