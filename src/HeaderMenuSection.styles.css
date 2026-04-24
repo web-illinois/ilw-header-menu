@@ -74,6 +74,11 @@ button, .link {
       border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus);
       border-left: var(--ilw-header-menu--link-border-left-highlight--focus);
     }
+
+    &:focus:hover {
+      color: var(--il-blue);
+      fill: var(--il-blue);
+    }
 }
 
 button[aria-expanded="true"] { 
