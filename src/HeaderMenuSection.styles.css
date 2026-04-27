@@ -14,7 +14,7 @@
   left: var(--ilw-header-menu--items--left);
   top: var(--ilw-header-menu--items--top);
   z-index: 100;
-  background: white;
+  background: var(--ilw-header-menu--background-menu-expanded);
 }
 
 #items.expanded.right {
@@ -73,6 +73,11 @@ button, .link {
       background: var(--ilw-header-menu--link-background--focus);
       border-bottom: var(--ilw-header-menu--link-border-bottom-highlight--focus);
       border-left: var(--ilw-header-menu--link-border-left-highlight--focus);
+    }
+
+    &:focus:hover {
+      color: var(--il-blue);
+      fill: var(--il-blue);
     }
 }
 

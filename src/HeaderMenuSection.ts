@@ -1,6 +1,7 @@
 import { LitElement, html, unsafeCSS } from "lit";
 // @ts-ignore
 import styles from './HeaderMenuSection.styles.css?inline';
+// @ts-ignore
 import './HeaderMenuSection.css';
 import { customElement, property } from "lit/decorators.js";
 
@@ -50,6 +51,7 @@ export default class HeaderMenuSection extends LitElement {
     connectedCallback() {
         super.connectedCallback();
     }
+    
 
     handleToggleClick(evt: Event) {
         this.expanded = !this.expanded;
@@ -209,6 +211,17 @@ export default class HeaderMenuSection extends LitElement {
     }
 
 
+    handleFocusout(target: FocusEvent) {
+        const currentTarget = target.target as HTMLElement;
+        const htmlTarget = target.relatedTarget as HTMLElement;
+        const slot = this.renderRoot.querySelector('slot:not([name])') as HTMLSlotElement;
+        var elements = slot?.assignedElements({flatten: true});
+        if (currentTarget?.tagName == 'A' && !Array.from(elements[0].children).includes(htmlTarget.parentElement as Element)) {
+            this.expanded = false;
+        }
+        target.stopPropagation();
+    }
+
     render() {
         let isSubMenu = this.parentElement != null && this.parentElement.closest("ilw-header-menu-section") != null;
         this.current = this.current || (this.getAttribute('aria-current') != null && (this.getAttribute('aria-current') === 'page' || this.getAttribute('aria-current') === 'true'));
@@ -231,7 +244,7 @@ export default class HeaderMenuSection extends LitElement {
         `;
 
         return html`
-            <div class="${isSubMenu ? 'submenu' : 'menu'} parent" @ilw-header-menu-section-expanded=${this.handleNavigationSectionToggleClick}>
+            <div @focusout="${this.handleFocusout}" class="${isSubMenu ? 'submenu' : 'menu'} parent" @ilw-header-menu-section-expanded=${this.handleNavigationSectionToggleClick}>
                 ${this.linked ? withLink : withoutLink}
                 <div id="items" class="${this.expanded ? 'expanded' : ''} ${this.right ? 'right' : ''}">
                     <slot></slot>

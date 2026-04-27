@@ -1,6 +1,7 @@
 import { LitElement, html, unsafeCSS, CSSResultGroup } from "lit";
 // @ts-ignore
 import styles from './HeaderMenu.styles.css?inline';
+// @ts-ignore
 import './HeaderMenu.css';
 import { customElement, property } from "lit/decorators.js";
 import HeaderMenuSection from "./HeaderMenuSection";

@@ -5,14 +5,15 @@
       --ilw-header-menu--link-color--hover: var(--il-altgeld);
       --ilw-header-menu--link-background: transparent;
       --ilw-header-menu--link-background--hover: white;
-      --ilw-header-menu--link-background--focus: var(--il-industrial-lighter-4);
-      --ilw-header-menu--link-background--sub--focus: var(--il-industrial-lighter-4);
+      --ilw-header-menu--link-background--focus: var(--ilw-color--focus--background);
+      --ilw-header-menu--link-background--sub--focus: var(--ilw-color--focus--background);
       --ilw-header-menu--link-border-bottom-highlight: 4px solid transparent;
       --ilw-header-menu--link-border-bottom-highlight--hover: 4px solid var(--il-orange);
       --ilw-header-menu--link-border-bottom-highlight--focus: 4px solid var(--il-blue);
       --ilw-header-menu--link-border-left-highlight: none;
       --ilw-header-menu--link-border-left-highlight--focus: none;
       --ilw-header-menu--background: #E8E9EB;
+      --ilw-header-menu--background-menu-expanded: #FFFFFF;
       --ilw-header-menu--flex-direction: row;
       --ilw-header-menu--items--position: absolute;
       --ilw-header-menu--items--border: 1px solid rgb(0, 0, 0, .01);
