@@ -1,13 +1,27 @@
 {
-    "title": "Header Menu",
-    "tag": "ilw-header-menu",
-    "github": "https://github.com/web-illinois/ilw-header-menu/",
-    "type": "web component",
-    "element-name": "ilw-header-menu",
-    "description": "Menu for the top of the page.",
-    "purpose": "Build a navigation menu",
-    "toolkit-version": "1.2",
-    "production-version": "1.2",
-    "development-version": "1.2",
-    "builder-override-link": "/notes/header/index.html"
+  "title": "Header Menu",
+  "id": "ilw-header-menu",
+  "type": "Web Component",
+  "repository-name": "ilw-header-menu",
+  "description": "Create a responsive navigation menu for the top of a page and organize links into a clear site structure.",
+  "purpose": "Build a navigation menu",
+  "customtemplates": [
+    {
+      "name": "Custom Template",
+      "path": "/notes/header/index.html",
+      "notes": "Use the guided custom builder for this component."
+    }
+  ],
+  "versions": [
+    {
+      "name": "1.0",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.2",
+      "notes": "",
+      "template": "1.0"
+    }
+  ]
 }
