@@ -5,13 +5,7 @@
   "repository-name": "ilw-header-menu",
   "description": "Create a responsive navigation menu for the top of a page and organize links into a clear site structure.",
   "purpose": "Build a navigation menu",
-  "customtemplates": [
-    {
-      "name": "Custom Template",
-      "path": "/notes/header/index.html",
-      "notes": "Use the guided custom builder for this component."
-    }
-  ],
+  "customtemplates": [  ],
   "versions": [
     {
       "name": "1.0",
@@ -19,7 +13,17 @@
       "template": "1.0"
     },
     {
+      "name": "1.1",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
       "name": "1.2",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.3",
       "notes": "",
       "template": "1.0"
     }
