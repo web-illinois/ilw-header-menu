@@ -28,7 +28,13 @@
     }
   ],
   "attributes-fixed": [],
-  "attributes-text": [],
+  "attributes-text": [
+    {
+      "name": "width",
+      "description": "The width it switches to compact, in pixels. Must be a number. Default is 990.",
+      "deprecated": false
+    }
+  ],
   "attributes": [
     {
       "name": "compact",
@@ -37,15 +43,6 @@
       "values": [
         "",
         "true"
-      ]
-    },
-    {
-      "name": "width",
-      "description": "The width it switches to compact, in pixels. Must be a number. Default is 990.",
-      "deprecated": false,
-      "values": [
-        "",
-        "990"
       ]
     }
   ],
